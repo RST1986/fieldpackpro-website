@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FieldPack Pro Jamaica — FTTH & 5G Field Operations Platform</title>
+<meta name="description" content="Professional FTTH & 5G field operations platform with LiDAR 3D scanning, AI-powered quotes, and real-time Command Centre sync. Built for Caribbean telecoms by Tellinex.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050a12;--bg-elevated:#0a1020;--surface:#111827;--surface-2:#161f33;--border:#1a2540;--text:#eaf0f8;--text-muted:#8899b4;--accent:#f97316;--accent-glow:rgba(249,115,22,0.15);--accent-2:#fb923c;--blue:#3b82f6;--green:#22c55e;--purple:#a855f7}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;backdrop-filter:blur(20px);background:rgba(5,10,18,0.85);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:0.6rem}
+.tellinex-parent{display:flex;align-items:center;text-decoration:none}.tellinex-logo{height:28px;width:auto;opacity:0.85;transition:opacity 0.2s}.tellinex-parent:hover .tellinex-logo{opacity:1}
+.nav-divider{width:1px;height:24px;background:var(--border);margin:0 0.6rem}
+.nav-logo{width:34px;height:34px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.75rem;color:#fff}
+.nav-name{font-weight:700;font-size:1rem}.nav-name span{color:var(--text-muted);font-weight:400;margin-left:0.25rem}
+.nav-links{display:flex;gap:2rem;align-items:center}.nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.88rem;font-weight:500;transition:color 0.2s}.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--accent);color:#fff;padding:0.5rem 1.25rem;border-radius:8px;font-weight:600;font-size:0.88rem;text-decoration:none;transition:all 0.2s}.nav-cta:hover{background:var(--accent-2);transform:translateY(-1px)}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(249,115,22,0.08) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(59,130,246,0.05) 0%,transparent 50%);pointer-events:none}
+.badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent-glow);border:1px solid rgba(249,115,22,0.25);padding:0.4rem 1rem;border-radius:100px;font-size:0.8rem;font-weight:600;color:var(--accent);margin-bottom:2rem;position:relative}
+.badge-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-0.035em;margin-bottom:1.5rem;position:relative}h1 .accent{color:var(--accent)}
+.hero-sub{color:var(--text-muted);font-size:1.15rem;max-width:560px;line-height:1.7;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn{padding:0.85rem 2rem;border-radius:10px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.25s;display:inline-flex;align-items:center;gap:0.5rem}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(249,115,22,0.3)}.btn-primary:hover{background:var(--accent-2);transform:translateY(-2px);box-shadow:0 6px 30px rgba(249,115,22,0.4)}
+.btn-secondary{background:var(--surface);border:1px solid var(--border);color:var(--text)}.btn-secondary:hover{border-color:var(--accent);transform:translateY(-2px)}
+.stats{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);position:relative}
+.stat{text-align:center}.stat-val{font-size:2rem;font-weight:800;color:var(--accent);letter-spacing:-0.02em}.stat-label{font-size:0.82rem;color:var(--text-muted);margin-top:0.25rem}
+.section{padding:6rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:500;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.75rem}
+.section h2{font-size:2.25rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem}
+.section-desc{color:var(--text-muted);font-size:1.05rem;max-width:560px;line-height:1.7;margin-bottom:3rem}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.feature-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2rem;transition:all 0.3s;position:relative;overflow:hidden}.feature-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 40px rgba(0,0,0,0.3)}
+.feature-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity 0.3s}.feature-card:hover::after{opacity:1}
+.feature-icon{font-size:1.75rem;margin-bottom:1rem}.feature-card h3{font-size:1.05rem;font-weight:700;margin-bottom:0.5rem}.feature-card p{color:var(--text-muted);font-size:0.9rem;line-height:1.65}
+.opus-section{background:var(--bg-elevated);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.opus-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}@media(max-width:768px){.opus-grid{grid-template-columns:1fr}}
+.opus-visual{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem}
+.opus-chat-bubble{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;font-size:0.88rem;line-height:1.6}
+.opus-chat-bubble.user{background:rgba(249,115,22,0.08);border-color:rgba(249,115,22,0.2);margin-left:2rem}
+.opus-chat-bubble.ai{border-color:var(--border);margin-right:2rem}
+.opus-chat-label{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem}
+.opus-chat-label.user-label{color:var(--accent)}.opus-chat-label.ai-label{color:var(--blue)}
+.eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}@media(max-width:768px){.eco-grid{grid-template-columns:1fr}}
+.eco-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.75rem;text-align:center}
+.eco-card h3{font-size:1rem;margin-bottom:0.3rem}.eco-card p{color:var(--text-muted);font-size:0.85rem}.eco-card .eco-icon{font-size:1.5rem;margin-bottom:0.75rem}
+.cta-section{text-align:center;padding:8rem 2rem;position:relative}
+.cta-section::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 50% 60% at 50% 100%,rgba(249,115,22,0.06) 0%,transparent 60%);pointer-events:none}
+.cta-section h2{font-size:2.5rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem}.cta-section p{color:var(--text-muted);font-size:1.05rem;margin-bottom:2rem}
+footer{border-top:1px solid var(--border);padding:3rem 2rem;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-brand{display:flex;align-items:center;gap:0.5rem}.footer-links{display:flex;gap:2rem}.footer-links a{color:var(--text-muted);text-decoration:none;font-size:0.85rem}.footer-links a:hover{color:var(--text)}
+.footer-copy{color:var(--text-muted);font-size:0.8rem;width:100%;text-align:center;margin-top:2rem}
+</style>
+</head>
+<body>
+<nav>
+    <div class="nav-brand">
+        <a href="https://tellinex.com" class="tellinex-parent" title="A Tellinex company"><img src="https://tellinex-preview.netlify.app/Logo.svg" alt="Tellinex" class="tellinex-logo"></a>
+        <div class="nav-divider"></div>
+        <div class="nav-logo">FP</div>
+        <div class="nav-name">FieldPack Pro <span>Jamaica</span></div>
+    </div>
+    <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#opus">Opus AI</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="support.html">Support</a>
+        <a href="https://app.tellinex.com" class="nav-cta">Command Centre →</a>
+    </div>
+</nav>
+<section class="hero">
+    <div class="badge"><div class="badge-dot"></div>Now in TestFlight</div>
+    <h1>FTTH & 5G operations<br><span class="accent">built for the field.</span></h1>
+    <p class="hero-sub">LiDAR 3D scanning, AI-powered quotes, GPR integration, and real-time Command Centre sync — all on iPad. Purpose-built for Caribbean telecoms deployment.</p>
+    <div class="hero-actions">
+        <a href="mailto:rui@tellinex.com" class="btn btn-primary">Request Access →</a>
+        <a href="#features" class="btn btn-secondary">See Features</a>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="stat-val">29</div><div class="stat-label">Swift modules</div></div>
+        <div class="stat"><div class="stat-val">7K+</div><div class="stat-label">Lines of SwiftUI</div></div>
+        <div class="stat"><div class="stat-val">100%</div><div class="stat-label">Offline capable</div></div>
+        <div class="stat"><div class="stat-val">3D</div><div class="stat-label">LiDAR scanning</div></div>
+    </div>
+</section>
+<section class="section" id="features">
+    <div class="section-label">// capabilities</div>
+    <h2>Everything your field team needs.</h2>
+    <p class="section-desc">From site survey to signed-off installation — one platform, one device, zero paper.</p>
+    <div class="feature-grid">
+        <div class="feature-card"><div class="feature-icon">📐</div><h3>LiDAR 3D Scanning</h3><p>Capture precise spatial data of chambers, ducts, and installation sites using iPad's built-in LiDAR.</p></div>
+        <div class="feature-card"><div class="feature-icon">📸</div><h3>Evidence Chain</h3><p>Before, During, and After photo and 3D capture — GPS-tagged, timestamped, and automatically organised.</p></div>
+        <div class="feature-card"><div class="feature-icon">📄</div><h3>Auto Quotes & Materials</h3><p>Survey a site and receive an instant itemised quote with materials, labour, and depot sourcing.</p></div>
+        <div class="feature-card"><div class="feature-icon">🔬</div><h3>GPR Integration</h3><p>Connect Proceq GP8000 or Exodigo GPR devices via Bluetooth for subsurface utility mapping.</p></div>
+        <div class="feature-card"><div class="feature-icon">📡</div><h3>Offline-First</h3><p>Full operation without cellular signal. Data syncs automatically when connectivity returns.</p></div>
+        <div class="feature-card"><div class="feature-icon">🚀</div><h3>Dispatch Engine</h3><p>Receive optimised job assignments with intelligent route planning. Accept, update, and communicate.</p></div>
+    </div>
+</section>
+<section class="opus-section" id="opus">
+    <div class="section" style="padding-top:6rem;padding-bottom:6rem;">
+        <div class="opus-grid">
+            <div>
+                <div class="section-label">// opus ai</div>
+                <h2>Your AI field engineer.</h2>
+                <p class="section-desc" style="margin-bottom:0;">Opus AI is embedded across the entire Tellinex ecosystem — from the Command Centre to your iPad. It knows your materials, your standards, your network. Ask it anything.</p>
+            </div>
+            <div class="opus-visual">
+                <div class="opus-chat-bubble user"><div class="opus-chat-label user-label">Technician</div>What splice enclosure do I need for a 96-core to 12-core split at this chamber?</div>
+                <div class="opus-chat-bubble ai"><div class="opus-chat-label ai-label">Opus AI</div>For a 96→12 core split in a Type 4 chamber, use the Hexatronic FIST-GCO2-BX splice closure. In stock at Kingston Central depot (14 units). I've added it to your materials list with the 12-fibre splice tray kit.</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section" id="ecosystem">
+    <div class="section-label">// tellinex ecosystem</div>
+    <h2>One platform. Field to fibre.</h2>
+    <p class="section-desc">FieldPack Pro connects into the full Tellinex operations stack — every scan, photo, and quote flows through to the Command Centre in real time.</p>
+    <div class="eco-grid">
+        <div class="eco-card"><div class="eco-icon">🏢</div><h3>Command Centre</h3><p>Operations HQ. Manage teams, track jobs, monitor network builds, handle billing.</p></div>
+        <div class="eco-card"><div class="eco-icon">👤</div><h3>Customer Portal</h3><p>Self-service for subscribers. Service status, billing, support, and Opus AI chat.</p></div>
+        <div class="eco-card"><div class="eco-icon">🌐</div><h3>Tellinex Website</h3><p>AI-powered chatbot for quotes, coverage checks, and service enquiries.</p></div>
+    </div>
+</section>
+<section class="cta-section">
+    <h2>Ready to deploy?</h2>
+    <p>FieldPack Pro is available for Tellinex deployment partners and enterprise customers.</p>
+    <a href="mailto:rui@tellinex.com" class="btn btn-primary">Get in Touch →</a>
+</section>
+<footer>
+    <div class="footer-brand">
+        <a href="https://tellinex.com" class="tellinex-parent"><img src="https://tellinex-preview.netlify.app/Logo.svg" alt="Tellinex" class="tellinex-logo" style="height:22px;"></a>
+        <div class="nav-divider" style="height:18px;margin:0 0.75rem;"></div>
+        <span style="font-weight:600;font-size:0.9rem;">FieldPack Pro</span>
+    </div>
+    <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+        <a href="https://tellinex.com">Tellinex</a>
+        <a href="https://app.tellinex.com">Command Centre</a>
+    </div>
+    <div class="footer-copy">Part of the Tellinex Group · &copy; 2026 Tellinex Limited. All rights reserved.</div>
+</footer>
+</body>
+</html>
