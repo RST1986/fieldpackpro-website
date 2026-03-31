@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — FieldPack Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--bg:#0a0f1a;--surface:#111827;--border:#1e293b;--text:#e2e8f0;--text-muted:#94a3b8;--accent:#f97316;--accent-dim:rgba(249,115,22,0.12);--green:#22c55e}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'DM Sans',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+        .header{border-bottom:1px solid var(--border);padding:1.5rem 2rem;display:flex;align-items:center;gap:0.75rem}
+        .logo{width:36px;height:36px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff}
+        .logo-text{font-weight:600;font-size:1.05rem;color:var(--text)}.logo-text span{color:var(--text-muted);font-weight:400}
+        .container{max-width:720px;margin:0 auto;padding:3rem 2rem 6rem}
+        h1{font-size:2rem;font-weight:700;margin-bottom:0.5rem;letter-spacing:-0.02em}
+        .subtitle{color:var(--text-muted);font-size:1.05rem;margin-bottom:3rem}
+        .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:3rem}
+        @media(max-width:600px){.card-grid{grid-template-columns:1fr}}
+        .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color 0.2s}.card:hover{border-color:var(--accent)}
+        .card-icon{font-size:1.5rem;margin-bottom:0.75rem}.card h3{font-size:1rem;font-weight:600;margin-bottom:0.4rem}
+        .card p{color:var(--text-muted);font-size:0.88rem;margin-bottom:0.75rem}
+        .card a{color:var(--accent);text-decoration:none;font-size:0.88rem;font-weight:500}.card a:hover{text-decoration:underline}
+        h2{font-size:1.3rem;font-weight:700;margin-bottom:1.5rem;letter-spacing:-0.01em}
+        .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:0.75rem;overflow:hidden}
+        .faq-q{padding:1.25rem 1.5rem;font-weight:600;font-size:0.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
+        .faq-q::after{content:'+';font-size:1.2rem;color:var(--text-muted);transition:transform 0.2s}
+        .faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--accent)}
+        .faq-a{padding:0 1.5rem 0;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease;color:var(--text-muted);font-size:0.92rem}
+        .faq-item.open .faq-a{max-height:300px;padding:0 1.5rem 1.25rem}
+        .status-bar{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:0.75rem;margin-bottom:3rem}
+        .status-dot{width:10px;height:10px;background:var(--green);border-radius:50%;box-shadow:0 0 8px rgba(34,197,94,0.4)}
+        .status-text{font-size:0.92rem;font-weight:500}.status-text span{color:var(--text-muted);font-weight:400}
+        .footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--text-muted);font-size:0.8rem}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="https://tellinex.com" style="display:flex;align-items:center;text-decoration:none;"><img src="https://tellinex-preview.netlify.app/Logo.svg" alt="Tellinex" style="height:26px;width:auto;opacity:0.85;"></a>
+        <div style="width:1px;height:22px;background:var(--border);margin:0 0.5rem;"></div>
+        <div class="logo">FP</div>
+        <div class="logo-text">FieldPack Pro <span>Jamaica</span></div>
+    </div>
+    <div class="container">
+        <h1>Support</h1>
+        <p class="subtitle">Get help with FieldPack Pro Jamaica. We're here to keep your field teams running.</p>
+        <div class="status-bar"><div class="status-dot"></div><div class="status-text">All systems operational <span>· Command Centre, Sync, Opus AI</span></div></div>
+        <div class="card-grid">
+            <div class="card"><div class="card-icon">📧</div><h3>Email Support</h3><p>Technical issues, account access, or feature requests. Response within 4 business hours.</p><a href="mailto:support@fieldpackpro.com">support@fieldpackpro.com</a></div>
+            <div class="card"><div class="card-icon">💬</div><h3>In-App Chat</h3><p>Ask Opus AI directly inside FieldPack Pro for instant guidance on any feature or workflow.</p><a href="#">Built into the app</a></div>
+            <div class="card"><div class="card-icon">📞</div><h3>Urgent Issues</h3><p>Network-critical problems affecting live installations or service delivery.</p><a href="mailto:urgent@tellinex.com">urgent@tellinex.com</a></div>
+            <div class="card"><div class="card-icon">🏢</div><h3>Organisation Admin</h3><p>User management, team setup, and account administration via the Command Centre.</p><a href="https://app.tellinex.com">app.tellinex.com</a></div>
+        </div>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What devices does FieldPack Pro support?</div><div class="faq-a">FieldPack Pro requires an iPad Pro (2020 or later) or iPad Air (5th generation or later) with LiDAR capability, running iPadOS 17.0 or later.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does the app work offline?</div><div class="faq-a">Yes. FieldPack Pro is designed for field conditions with unreliable connectivity. All core functions work fully offline. Data syncs automatically when you reconnect.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I set up my technician account?</div><div class="faq-a">Your organisation administrator creates your account in the Tellinex Command Centre. You'll receive an email invitation with setup instructions.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How does GPR integration work?</div><div class="faq-a">FieldPack Pro connects to supported GPR devices (Proceq GP8000, Exodigo) via Bluetooth. GPR data is captured alongside your survey and linked to GPS location.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">My data isn't syncing. What should I do?</div><div class="faq-a">Check your internet connection first. Go to Settings → Sync Status to see pending items. Try Force Sync. If the issue persists, email support@fieldpackpro.com.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I export survey data?</div><div class="faq-a">Yes. Surveys can be exported as PDF reports directly from FieldPack Pro, or accessed via the Command Centre's Quotes tab.</div></div>
+    </div>
+    <div class="footer">
+        <a href="https://tellinex.com" style="display:inline-flex;align-items:center;gap:0.4rem;text-decoration:none;color:inherit;margin-bottom:0.5rem;">
+            <img src="https://tellinex-preview.netlify.app/Logo.svg" alt="Tellinex" style="height:18px;width:auto;opacity:0.6;">
+            <span style="opacity:0.6;">Part of the Tellinex Group</span>
+        </a><br>
+        &copy; 2026 Tellinex Limited. All rights reserved. · <a href="privacy.html" style="color:inherit;">Privacy Policy</a>
+    </div>
+</body>
+</html>
