@@ -22,13 +22,12 @@
         .card-icon{font-size:1.5rem;margin-bottom:0.75rem}.card h3{font-size:1rem;font-weight:600;margin-bottom:0.4rem}
         .card p{color:var(--text-muted);font-size:0.88rem;margin-bottom:0.75rem}
         .card a{color:var(--accent);text-decoration:none;font-size:0.88rem;font-weight:500}.card a:hover{text-decoration:underline}
+        .card-note{color:var(--accent);font-size:0.88rem;font-weight:500}
         h2{font-size:1.3rem;font-weight:700;margin-bottom:1.5rem;letter-spacing:-0.01em}
-        .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:0.75rem;overflow:hidden}
-        .faq-q{padding:1.25rem 1.5rem;font-weight:600;font-size:0.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
-        .faq-q::after{content:'+';font-size:1.2rem;color:var(--text-muted);transition:transform 0.2s}
-        .faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--accent)}
-        .faq-a{padding:0 1.5rem 0;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease;color:var(--text-muted);font-size:0.92rem}
-        .faq-item.open .faq-a{max-height:300px;padding:0 1.5rem 1.25rem}
+        details{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:0.75rem;overflow:hidden}
+        summary{padding:1.25rem 1.5rem;font-weight:600;font-size:0.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;list-style:none}
+        summary::-webkit-details-marker{display:none}summary::after{content:'+';font-size:1.2rem;color:var(--text-muted);transition:transform 0.2s}details[open] summary::after{transform:rotate(45deg);color:var(--accent)}
+        details p{padding:0 1.5rem 1.25rem;color:var(--text-muted);font-size:0.92rem}
         .status-bar{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:0.75rem;margin-bottom:3rem}
         .status-dot{width:10px;height:10px;background:var(--green);border-radius:50%;box-shadow:0 0 8px rgba(34,197,94,0.4)}
         .status-text{font-size:0.92rem;font-weight:500}.status-text span{color:var(--text-muted);font-weight:400}
@@ -37,32 +36,32 @@
 </head>
 <body>
     <div class="header">
-        <a href="https://tellinex.com" style="display:flex;align-items:center;text-decoration:none;"><img src="https://tellinex-preview.netlify.app/Logo.svg" alt="Tellinex" style="height:26px;width:auto;opacity:0.85;"></a>
+        <a href="https://tellinex.com" style="display:flex;align-items:center;text-decoration:none;"><img src="Logo.svg" alt="Tellinex" style="height:26px;width:auto;opacity:0.85;"></a>
         <div style="width:1px;height:22px;background:var(--border);margin:0 0.5rem;"></div>
         <div class="logo">FP</div>
         <div class="logo-text">FieldPack Pro <span>Jamaica</span></div>
     </div>
-    <div class="container">
+    <main class="container">
         <h1>Support</h1>
         <p class="subtitle">Get help with FieldPack Pro Jamaica. We're here to keep your field teams running.</p>
-        <div class="status-bar"><div class="status-dot"></div><div class="status-text">All systems operational <span>· Command Centre, Sync, Opus AI</span></div></div>
+        <div class="status-bar"><div class="status-dot" aria-hidden="true"></div><div class="status-text">Service status <span>· Check the Tellinex Command Centre for current operational state.</span></div></div>
         <div class="card-grid">
-            <div class="card"><div class="card-icon">📧</div><h3>Email Support</h3><p>Technical issues, account access, or feature requests. Response within 4 business hours.</p><a href="mailto:support@fieldpackpro.com">support@fieldpackpro.com</a></div>
-            <div class="card"><div class="card-icon">💬</div><h3>In-App Chat</h3><p>Ask Opus AI directly inside FieldPack Pro for instant guidance on any feature or workflow.</p><a href="#">Built into the app</a></div>
-            <div class="card"><div class="card-icon">📞</div><h3>Urgent Issues</h3><p>Network-critical problems affecting live installations or service delivery.</p><a href="mailto:urgent@tellinex.com">urgent@tellinex.com</a></div>
-            <div class="card"><div class="card-icon">🏢</div><h3>Organisation Admin</h3><p>User management, team setup, and account administration via the Command Centre.</p><a href="https://app.tellinex.com">app.tellinex.com</a></div>
+            <div class="card"><div class="card-icon" aria-hidden="true">📧</div><h3>Email Support</h3><p>Technical issues, account access, or feature requests. Response within 4 business hours.</p><a href="mailto:support@fieldpackpro.com">support@fieldpackpro.com</a></div>
+            <div class="card"><div class="card-icon" aria-hidden="true">💬</div><h3>In-App Chat</h3><p>Ask Opus AI directly inside FieldPack Pro for guidance on supported features and workflows.</p><span class="card-note">Built into the app</span></div>
+            <div class="card"><div class="card-icon" aria-hidden="true">📞</div><h3>Urgent Issues</h3><p>Network-critical problems affecting live installations or service delivery.</p><a href="mailto:urgent@tellinex.com">urgent@tellinex.com</a></div>
+            <div class="card"><div class="card-icon" aria-hidden="true">🏢</div><h3>Organisation Admin</h3><p>User management, team setup, and account administration via the Command Centre.</p><a href="https://app.tellinex.com">app.tellinex.com</a></div>
         </div>
         <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What devices does FieldPack Pro support?</div><div class="faq-a">FieldPack Pro requires an iPad Pro (2020 or later) or iPad Air (5th generation or later) with LiDAR capability, running iPadOS 17.0 or later.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does the app work offline?</div><div class="faq-a">Yes. FieldPack Pro is designed for field conditions with unreliable connectivity. All core functions work fully offline. Data syncs automatically when you reconnect.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I set up my technician account?</div><div class="faq-a">Your organisation administrator creates your account in the Tellinex Command Centre. You'll receive an email invitation with setup instructions.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How does GPR integration work?</div><div class="faq-a">FieldPack Pro connects to supported GPR devices (Proceq GP8000, Exodigo) via Bluetooth. GPR data is captured alongside your survey and linked to GPS location.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">My data isn't syncing. What should I do?</div><div class="faq-a">Check your internet connection first. Go to Settings → Sync Status to see pending items. Try Force Sync. If the issue persists, email support@fieldpackpro.com.</div></div>
-        <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I export survey data?</div><div class="faq-a">Yes. Surveys can be exported as PDF reports directly from FieldPack Pro, or accessed via the Command Centre's Quotes tab.</div></div>
-    </div>
+        <details><summary>What devices does FieldPack Pro support?</summary><p>FieldPack Pro requires an iPad Pro (2020 or later) or iPad Air (5th generation or later) with LiDAR capability, running iPadOS 17.0 or later.</p></details>
+        <details><summary>Does the app work offline?</summary><p>Yes. FieldPack Pro is designed for field conditions with unreliable connectivity. Core field functions work offline and queued data can sync when connectivity returns.</p></details>
+        <details><summary>How do I set up my technician account?</summary><p>Your organisation administrator creates your account in the Tellinex Command Centre. You'll receive an email invitation with setup instructions.</p></details>
+        <details><summary>How does GPR integration work?</summary><p>FieldPack Pro is designed to integrate supported GPR workflows with survey and location evidence. Availability depends on the approved device and deployment configuration.</p></details>
+        <details><summary>My data isn't syncing. What should I do?</summary><p>Check your internet connection first. Go to Settings → Sync Status to see pending items. Try Force Sync. If the issue persists, email support@fieldpackpro.com.</p></details>
+        <details><summary>Can I export survey data?</summary><p>Supported survey workflows can produce controlled reports and make evidence available through the operational platform, subject to the enabled deployment configuration.</p></details>
+    </main>
     <div class="footer">
         <a href="https://tellinex.com" style="display:inline-flex;align-items:center;gap:0.4rem;text-decoration:none;color:inherit;margin-bottom:0.5rem;">
-            <img src="https://tellinex-preview.netlify.app/Logo.svg" alt="Tellinex" style="height:18px;width:auto;opacity:0.6;">
+            <img src="Logo.svg" alt="Tellinex" style="height:18px;width:auto;opacity:0.6;">
             <span style="opacity:0.6;">Part of the Tellinex Group</span>
         </a><br>
         &copy; 2026 Tellinex Limited. All rights reserved. · <a href="privacy.html" style="color:inherit;">Privacy Policy</a>
